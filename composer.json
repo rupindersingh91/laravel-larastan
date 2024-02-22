@@ -50,6 +50,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "larastan": [
+            "vendor/bin/phpstan analyze -c phpstan.neon",
+            "vendor/bin/phpcs",
+            "vendor/bin/phpmd app text phpmd.xml"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
